@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('picture', 'App\Http\Controllers\PictureController@create')->name('picture.create');
+Route::post('picture', 'App\Http\Controllers\PictureController@store')->name('picture.download');
+Route::get('{short_url}', 'App\Http\Controllers\PictureController@getPicture');
